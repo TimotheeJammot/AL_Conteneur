@@ -3,6 +3,8 @@ package impl;
 import services.GestionComposant;
 import services.OCComponent;
 
+import java.util.List;
+
 public class GestionComposantImpl implements GestionComposant {
 
 	@Override
