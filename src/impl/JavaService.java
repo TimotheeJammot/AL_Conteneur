@@ -6,14 +6,14 @@ public class JavaService extends OCService {
 
 	@Override
 	public String getServiceName() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return name;
 	}
 
 	@Override
 	public String getServiceProperties() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return properties.toString();
 	}
 
 }

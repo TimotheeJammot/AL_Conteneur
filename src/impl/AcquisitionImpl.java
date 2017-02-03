@@ -8,41 +8,47 @@ import services.OCComponent;
 import services.OCService;
 
 public class AcquisitionImpl implements Acquisition {
+
+	ConteneurComposants conteneur;
+	
+	public AcquisitionImpl(ConteneurComposants conteneur) {
+		this.conteneur = conteneur;
+	}
 	
 	@Override
 	public Set<OCComponent> getNewComponents() throws AcquisitionFailure {
-		// TODO Auto-generated method stub
-		return null;
+
+		return conteneur.getNouveauxComposants();
 	}
 
 	@Override
 	public Set<OCComponent> getDisappearedComponents() throws AcquisitionFailure {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return conteneur.getSupprimesComposants();
 	}
 
 	@Override
 	public Set<OCComponent> getCurrentComponents() throws AcquisitionFailure {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return conteneur.getActuelsComposants();
 	}
 
 	@Override
 	public Set<OCService> getNewServices() throws AcquisitionFailure {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return conteneur.getNouveauxServices();
 	}
 
 	@Override
 	public Set<OCService> getDisappearedServices() throws AcquisitionFailure {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return conteneur.getSupprimesServies();
 	}
 
 	@Override
 	public Set<OCService> getCurrentServices() throws AcquisitionFailure {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return conteneur.getActuelsServices();
 	}
 
 }

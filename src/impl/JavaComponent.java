@@ -9,20 +9,20 @@ public class JavaComponent extends OCComponent {
 
 	@Override
 	public ArrayList<OCService> getRequiredServices() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return required;
 	}
 
 	@Override
 	public ArrayList<OCService> getProvidedServices() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return provided;
 	}
 
 	@Override
 	public String getComponentProperties() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return properties.toString();
 	}
 
 }

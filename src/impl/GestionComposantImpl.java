@@ -5,16 +5,22 @@ import services.OCComponent;
 
 public class GestionComposantImpl implements GestionComposant {
 
+	ConteneurComposants conteneur;
+	
+	public GestionComposantImpl(ConteneurComposants conteneur) {
+		this.conteneur = conteneur;
+	}
+	
 	@Override
 	public void creerComposant(OCComponent component) {
-		// TODO Auto-generated method stub
-		
+
+		conteneur.creerComposant(component);
 	}
 
 	@Override
 	public void supprimerComposant(OCComponent component) {
-		// TODO Auto-generated method stub
-		
+
+		conteneur.supprimerComposant(component);
 	}
 
 }
