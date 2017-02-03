@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class ConteneurComposants {
+	
     private Set<OCComponent> nouveauxComposants;
     private Set<OCComponent> actuelsComposants;
 	private Set<OCComponent> supprimesComposants;
@@ -18,21 +19,34 @@ public class ConteneurComposants {
         this.supprimesComposants = new HashSet<OCComponent>();
     }
 
-    public void ajouterComposant(OCComponent composant) {
+    public void creerComposant(OCComponent composant) {
         this.nouveauxComposants.add(composant);
-    }
-
-    public Set<OCComponent> getNouveauxComposants() {
-        Set<OCComponent> set = nouveauxComposants;
-        this.actuelsComposants.addAll(this.nouveauxComposants);
-        this.nouveauxComposants = new HashSet<OCComponent>();
-        return set;
     }
 
     public void supprimerComposant(OCComponent composant) {
         this.actuelsComposants.remove(composant);
         this.nouveauxComposants.remove(composant);
         this.supprimesComposants.add(composant);
+    }
+
+    public Set<OCComponent> getNouveauxComposants() {
+        Set<OCComponent> set = nouveauxComposants;
+        this.actuelsComposants.addAll(this.nouveauxComposants);
+        this.nouveauxComposants = new HashSet<OCComponent>();
+        
+        return set;
+    }
+
+    public Set<OCComponent> getActuelsComposants() {
+    	Set<OCComponent> tempSet = new HashSet<OCComponent>();
+    	tempSet.addAll(actuelsComposants);
+    	tempSet.addAll(nouveauxComposants);
+    	
+    	return tempSet;
+    }
+    
+    public Set<OCComponent> getDisappearedComposants() {
+    	return supprimesComposants;
     }
 
     public Set<OCService> getNouveauxServices() {
