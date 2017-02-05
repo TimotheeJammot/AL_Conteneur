@@ -2,6 +2,6 @@ package services;
 
 public interface GestionComposant {
 	
-    void creerComposant(OCComponent component);
-    void supprimerComposant(OCComponent component);
+    void creerComposant(String id);
+    void supprimerComposant(String id);
 }
