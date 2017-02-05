@@ -24,7 +24,7 @@ public class AcquisitionImpl implements Acquisition {
 	@Override
 	public Set<OCComponent> getDisappearedComponents() throws AcquisitionFailure {
 		
-		return conteneur.getSupprimesComposants();
+		return conteneur.getDisappearedComposants();
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class AcquisitionImpl implements Acquisition {
 	@Override
 	public Set<OCService> getDisappearedServices() throws AcquisitionFailure {
 		
-		return conteneur.getSupprimesServies();
+		return conteneur.getDisappearedServices();
 	}
 
 	@Override

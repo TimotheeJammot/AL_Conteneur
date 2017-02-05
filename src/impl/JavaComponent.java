@@ -25,4 +25,12 @@ public class JavaComponent extends OCComponent {
 		return properties.toString();
 	}
 
+
+	public String getComponentProperty(String prop) {
+		return (String)properties.get(prop);
+	}
+
+	public void setComponentProperty(String prop, String value) {
+		properties.put(prop, value);
+	}
 }

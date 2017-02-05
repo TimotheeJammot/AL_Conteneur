@@ -14,15 +14,15 @@ public class GestionComposantImpl implements GestionComposant {
 	}
 	
 	@Override
-	public void creerComposant(OCComponent component) {
+	public void creerComposant(String id) {
 
-		conteneur.creerComposant(component);
+		conteneur.creerComposant(id);
 	}
 
 	@Override
-	public void supprimerComposant(OCComponent component) {
+	public void supprimerComposant(String id) {
 
-		conteneur.supprimerComposant(component);
+		conteneur.supprimerComposant(id);
 	}
 
 }

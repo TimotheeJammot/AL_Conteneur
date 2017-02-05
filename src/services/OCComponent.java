@@ -16,4 +16,6 @@ public abstract class OCComponent {
 	public abstract ArrayList<OCService> getRequiredServices();
 	public abstract ArrayList<OCService> getProvidedServices();
 	public abstract String getComponentProperties();
+	public abstract String getComponentProperty(String prop);
+	public abstract void setComponentProperty(String prop, String value);
 }

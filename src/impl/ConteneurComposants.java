@@ -19,16 +19,43 @@ public class ConteneurComposants {
         this.supprimesComposants = new HashSet<OCComponent>();
     }
 
-    public void creerComposant(OCComponent composant) {
+    public void creerComposant(String id) {
+    	JavaComponent composant = new JavaComponent();
+    	composant.setComponentProperty("id", id);
         this.nouveauxComposants.add(composant);
     }
 
-    public void supprimerComposant(OCComponent composant) {
-        this.actuelsComposants.remove(composant);
-        this.nouveauxComposants.remove(composant);
-        this.supprimesComposants.add(composant);
+    public void supprimerComposant(String id) {
+    	OCComponent composant;
+    	
+    	composant = trouverComposant(id, nouveauxComposants);
+    	if (composant != null) {
+            this.actuelsComposants.remove(composant);
+            this.supprimesComposants.add(composant);
+            return;
+    	}
+
+    	composant = trouverComposant(id, actuelsComposants);
+    	if (composant != null) {
+            this.nouveauxComposants.remove(composant);
+            this.supprimesComposants.add(composant);
+    		
+    	}
     }
 
+    public OCComponent trouverComposant(String id, Set<OCComponent> setComposants) {
+    	OCComponent composant = null;
+    	
+    	for (OCComponent tempComp : setComposants) {
+    		if (tempComp.getComponentProperty("id").equals(id)) {
+    			composant = tempComp;
+    			break;
+    		}
+    	}
+    	
+    	return composant;
+    }
+    
     public Set<OCComponent> getNouveauxComposants() {
         Set<OCComponent> set = nouveauxComposants;
         this.actuelsComposants.addAll(this.nouveauxComposants);
@@ -77,5 +104,11 @@ public class ConteneurComposants {
         }
 
         return set;
+    }
+    
+    public Set<OCService> getDisappearedServices() {
+        Set<OCService> set = new HashSet<>();
+    	
+    	return set; // TODO
     }
 }
