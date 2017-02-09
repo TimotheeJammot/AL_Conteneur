@@ -96,7 +96,7 @@ public class ConteneurComposants {
             set.addAll(comp.getRequiredServices());
             set.addAll(comp.getProvidedServices());
         }
-        iter = this.nouveauxComposants.iterator();
+        iter = this.actuelsComposants.iterator();
         while (iter.hasNext()) {
             OCComponent comp = iter.next();
             set.addAll(comp.getRequiredServices());
@@ -108,7 +108,13 @@ public class ConteneurComposants {
     
     public Set<OCService> getDisappearedServices() {
         Set<OCService> set = new HashSet<>();
-    	
-    	return set; // TODO
+        Iterator<OCComponent> iter = this.supprimesComposants.iterator();
+        while (iter.hasNext()) {
+            OCComponent comp = iter.next();
+            set.addAll(comp.getRequiredServices());
+            set.addAll(comp.getProvidedServices());
+        }
+
+        return set;
     }
 }
