@@ -1,0 +1,21 @@
+[
+  {
+    "nom": "methode1",
+    "type": "boolean",
+    "parametres": [
+      {
+        "nom": "param1",
+        "type": "String"
+      },
+      {
+        "nom": "param2",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "nom": "methode2",
+    "type": "void",
+    "parametres": []
+  }
+]
