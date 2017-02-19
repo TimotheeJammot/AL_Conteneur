@@ -1,9 +1,5 @@
 package impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Properties;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -11,6 +7,10 @@ import com.google.gson.JsonParser;
 import services.OCComponent;
 import services.OCService;
 import services.UserComponent;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Properties;
 
 public class JavaComponent extends OCComponent {
     /**
@@ -31,7 +31,7 @@ public class JavaComponent extends OCComponent {
         Iterator<JsonElement> jsonElementIterator = jsonArray.iterator();
         while (jsonElementIterator.hasNext()) {
             JsonObject serviceJson = jsonElementIterator.next().getAsJsonObject();
-            JavaService javaService = new JavaService(serviceJson);
+            JavaService javaService = new JavaService(serviceJson, this);
             if (serviceJson.get("type").getAsString().equals("required")) {
                 required.add(javaService);
             } else if (serviceJson.get("type").getAsString().equals("provided")) {
