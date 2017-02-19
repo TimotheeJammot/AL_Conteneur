@@ -1,28 +1,23 @@
 package impl;
 
 import services.GestionComposant;
-import services.OCComponent;
 
-import java.util.List;
+import java.util.Properties;
 
 public class GestionComposantImpl implements GestionComposant {
+    ConteneurComposants conteneur;
 
-	ConteneurComposants conteneur;
-	
-	public GestionComposantImpl(ConteneurComposants conteneur) {
-		this.conteneur = conteneur;
-	}
-	
-	@Override
-	public void creerComposant(String id) {
+    public GestionComposantImpl(ConteneurComposants conteneur) {
+        this.conteneur = conteneur;
+    }
 
-		conteneur.creerComposant(id);
-	}
+    @Override
+    public void creerComposant(Properties properties, Object userComponent) {
+        conteneur.creerComposant(properties, userComponent);
+    }
 
-	@Override
-	public void supprimerComposant(String id) {
-
-		conteneur.supprimerComposant(id);
-	}
-
+    @Override
+    public void supprimerComposant(String properties) {
+        conteneur.supprimerComposant(properties);
+    }
 }

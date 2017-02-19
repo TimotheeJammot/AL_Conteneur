@@ -5,6 +5,7 @@ import services.OCService;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Properties;
 import java.util.Set;
 
 public class ConteneurComposants {
@@ -19,10 +20,9 @@ public class ConteneurComposants {
         this.supprimesComposants = new HashSet<OCComponent>();
     }
 
-    public void creerComposant(String id) {
-    	JavaComponent composant = new JavaComponent();
-    	composant.setComponentProperty("id", id);
-        this.nouveauxComposants.add(composant);
+    public void creerComposant(Properties properties, Object userComponent) {
+    	JavaComponent javaComponent = new JavaComponent(properties, userComponent);
+        this.nouveauxComposants.add(javaComponent);
     }
 
     public void supprimerComposant(String id) {
