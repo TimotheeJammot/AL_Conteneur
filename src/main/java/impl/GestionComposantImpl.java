@@ -18,7 +18,7 @@ public class GestionComposantImpl implements GestionComposant {
     }
 
     @Override
-    public void supprimerComposant(String properties) {
+    public void supprimerComposant(Properties properties) {
         conteneur.supprimerComposant(properties);
     }
 }

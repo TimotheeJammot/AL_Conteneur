@@ -26,17 +26,17 @@ public class ConteneurComposants {
         this.nouveauxComposants.add(javaComponent);
     }
 
-    public void supprimerComposant(String id) {
+    public void supprimerComposant(Properties properties) {
         OCComponent composant;
 
-        composant = trouverComposant(id, nouveauxComposants);
+        composant = trouverComposant(properties, nouveauxComposants);
         if (composant != null) {
             this.actuelsComposants.remove(composant);
             this.supprimesComposants.add(composant);
             return;
         }
 
-        composant = trouverComposant(id, actuelsComposants);
+        composant = trouverComposant(properties, actuelsComposants);
         if (composant != null) {
             this.nouveauxComposants.remove(composant);
             this.supprimesComposants.add(composant);
@@ -44,11 +44,11 @@ public class ConteneurComposants {
         }
     }
 
-    public OCComponent trouverComposant(String id, Set<OCComponent> setComposants) {
+    public OCComponent trouverComposant(Properties properties, Set<OCComponent> setComposants) {
         OCComponent composant = null;
 
         for (OCComponent tempComp : setComposants) {
-            if (tempComp.getComponentProperty("id").equals(id)) {
+            if (tempComp.getComponentProperty("id").equals(properties.getProperty("id"))) {
                 composant = tempComp;
                 break;
             }
