@@ -1,6 +1,7 @@
 package impl;
 
 import services.GestionComposant;
+import services.UserComponent;
 
 import java.util.Properties;
 
@@ -12,7 +13,7 @@ public class GestionComposantImpl implements GestionComposant {
     }
 
     @Override
-    public void creerComposant(Properties properties, Object userComponent) {
+    public void creerComposant(Properties properties, UserComponent userComponent) {
         conteneur.creerComposant(properties, userComponent);
     }
 

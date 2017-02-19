@@ -2,6 +2,7 @@ package impl;
 
 import services.OCComponent;
 import services.OCService;
+import services.UserComponent;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -20,7 +21,7 @@ public class ConteneurComposants {
         this.supprimesComposants = new HashSet<OCComponent>();
     }
 
-    public void creerComposant(Properties properties, Object userComponent) {
+    public void creerComposant(Properties properties, UserComponent userComponent) {
     	JavaComponent javaComponent = new JavaComponent(properties, userComponent);
         this.nouveauxComposants.add(javaComponent);
     }

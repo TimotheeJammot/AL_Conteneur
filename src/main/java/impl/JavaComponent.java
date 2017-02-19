@@ -10,14 +10,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import services.OCComponent;
 import services.OCService;
+import services.UserComponent;
 
 public class JavaComponent extends OCComponent {
     /**
      * Le composant lié doit respecter le manuel utilisateur
      */
-    private Object userComponent;
+    private UserComponent userComponent;
 
-    public JavaComponent(Properties componantProperties, Object userComponent) {
+    public JavaComponent(Properties componantProperties, UserComponent userComponent) {
         this.userComponent = userComponent;
 
         properties = componantProperties;
