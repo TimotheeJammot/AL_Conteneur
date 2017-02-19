@@ -1,10 +1,6 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.util.Iterator;
@@ -43,6 +39,11 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
 
+        try {
+            boolean my = (boolean) P.class.getMethod("testMethod", null).invoke(new P(), null);
+        } catch (Exception e) {
+            System.out.println("Omg t'as pas suivi le manuel");
+        }
+    }
 }
