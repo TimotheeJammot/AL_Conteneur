@@ -17,7 +17,6 @@ public class JavaComponent extends OCComponent {
      * Le composant lié doit respecter le manuel utilisateur
      */
     private UserComponent userComponent;
-
     public JavaComponent(Properties componantProperties, UserComponent userComponent) {
         this.userComponent = userComponent;
 
@@ -62,4 +61,9 @@ public class JavaComponent extends OCComponent {
     public void setComponentProperty(String prop, String value) {
         properties.setProperty(prop, value);
     }
+
+    public UserComponent getUserComponent() {
+        return userComponent;
+    }
+
 }
